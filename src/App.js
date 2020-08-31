@@ -1,21 +1,22 @@
 import React from 'react';
 
+import Header from './components/header/header.component';
+
 import './App.css';
 
 class App extends React.Component {
-  
-  constructor(props){
+  constructor(props) {
     super();
 
     this.state = {
-      points: 0
-    }
+      score: 0
+    };
   }
-  
+
   render() {
     return (
       <div className="App">
-        <h1>Hola</h1>
+        <Header score={this.state.score} />
       </div>
     );
   }

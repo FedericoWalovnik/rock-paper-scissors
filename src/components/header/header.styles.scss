@@ -1,0 +1,13 @@
+.container {
+  margin: 0 auto;
+  margin-top: 2rem;
+  display: flex;
+  width: 65vw;
+  padding: 1rem 2rem;
+  border: 1px hsl(217, 16%, 45%) solid;
+  border-radius: 1rem;
+
+  & img {
+    height: 6rem;
+  }
+}

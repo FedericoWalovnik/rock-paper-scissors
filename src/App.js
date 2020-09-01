@@ -2,14 +2,14 @@ import React from 'react';
 
 import Header from './components/header/header.component';
 
-import './App.css';
+import './App.scss';
 
 class App extends React.Component {
   constructor(props) {
     super();
 
     this.state = {
-      score: 0
+      score: 15
     };
   }
 

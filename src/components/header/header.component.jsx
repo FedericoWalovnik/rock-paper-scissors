@@ -3,7 +3,7 @@ import logo from '../../images/logo.svg';
 
 import './header.styles.scss';
 
-const Header = ({ score }) => {
+const Header = (score) => {
   return (
     <div className="container">
       <img src={logo} alt="Logo" />

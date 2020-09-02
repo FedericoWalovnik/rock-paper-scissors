@@ -1,11 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import './homepage.styles.scss';
+
 const Homepage = () => {
   return (
-    <div>
-      <h1>Welcome to the game!</h1>
-      <Link to="/choose">Play</Link>
+    <div className="homepage">
+      <h1 className="homepage__welcome">Welcome to the game!</h1>
+      <Link to="/choose" className="homepage__play-btn">
+        Play
+      </Link>
     </div>
   );
 };

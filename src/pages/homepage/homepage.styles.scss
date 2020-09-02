@@ -1,0 +1,36 @@
+@import '../../sass/mixins.scss';
+@import '../../sass/variables.scss';
+
+.homepage {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 15rem;
+
+  &__welcome {
+    color: #fff;
+    font-size: 5rem;
+  }
+
+  &__play-btn:link,
+  &__play-btn:active,
+  &__play-btn {
+    color: #fff;
+    font-size: 2rem;
+    text-decoration: none;
+    padding: 0.6rem 4rem;
+    border: 2px solid #fff;
+    border-radius: 3px;
+    transition: all 0.2s;
+    width: 10vw;
+    text-align: center;
+    margin-top: 4rem;
+  }
+
+  &__play-btn:hover {
+    color: $background-color;
+    background-color: #fff;
+    border: none;
+  }
+}

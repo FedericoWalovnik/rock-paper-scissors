@@ -1,10 +1,23 @@
 import React from 'react';
-import Header from '../../components/header/header.component';
+import { Link } from 'react-router-dom';
 
-const OptionsPage = (score) => {
+import Header from '../../components/header/header.component';
+import Option from '../../components/option/option.component';
+
+const OptionsPage = ({ score, addScore }) => {
   return (
     <div>
       <Header score={score} />
+      <button onClick={addScore}>Agregar punto</button>
+      <Link to="/results">
+        <Option option="rock" />
+      </Link>
+      <Link to="/results">
+        <Option option="paper" />
+      </Link>
+      <Link to="/results">
+        <Option option="scissors" />
+      </Link>
     </div>
   );
 };

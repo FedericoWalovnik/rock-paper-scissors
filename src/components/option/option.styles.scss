@@ -1,0 +1,33 @@
+.option {
+  border-radius: 5000px;
+  padding: 2.5rem;
+  width: 13rem;
+  height: 13rem;
+
+  &__icon-background {
+    background-color: #fff;
+    border-radius: 5000px;
+    height: 100%;
+    width: 100%;
+    position: relative;
+  }
+
+  &__icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.rock {
+  background-image: linear-gradient(hsl(230, 89%, 62%), hsl(230, 89%, 65%));
+}
+
+.paper {
+  background-image: linear-gradient(hsl(349, 71%, 52%), hsl(349, 70%, 56%));
+}
+
+.scissors {
+  background-image: linear-gradient(hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+}

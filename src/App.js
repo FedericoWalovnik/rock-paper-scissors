@@ -3,6 +3,7 @@ import { Route, Switch, BrowserRouter as Router } from 'react-router-dom';
 
 import Homepage from './pages/homepage/homepage.component';
 import OptionsPage from './pages/options/options.component';
+import ResultsPage from './pages/results/results.component';
 
 import './App.scss';
 
@@ -11,9 +12,18 @@ class App extends React.Component {
     super();
 
     this.state = {
-      score: 0
+      score: 0,
+      option: ""
     };
   }
+
+  addScore = () => {
+    this.setState({ score: this.state.score + 1 });
+  };
+
+  chooseOption = (option) => {
+    this.setState({ score: this.state.score + 1 });
+  };
 
   render() {
     return (
@@ -22,7 +32,13 @@ class App extends React.Component {
           <Route exact path={`/`} component={Homepage} />
           <Route
             path={`/choose`}
-            render={(props) => <OptionsPage score={this.state.score} />}
+            render={(props) => (
+              <OptionsPage score={this.state.score} addScore={this.addScore} />
+            )}
+          />
+          <Route
+            path="/results"
+            render={(props) => <ResultsPage score={this.state.score} />}
           />
         </Switch>
       </Router>

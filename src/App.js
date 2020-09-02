@@ -13,7 +13,7 @@ class App extends React.Component {
 
     this.state = {
       score: 0,
-      option: ""
+      option: ''
     };
   }
 
@@ -21,8 +21,8 @@ class App extends React.Component {
     this.setState({ score: this.state.score + 1 });
   };
 
-  chooseOption = (option) => {
-    this.setState({ score: this.state.score + 1 });
+  chooseOption = (optionChosen) => {
+    this.setState({ option: optionChosen });
   };
 
   render() {
@@ -33,12 +33,21 @@ class App extends React.Component {
           <Route
             path={`/choose`}
             render={(props) => (
-              <OptionsPage score={this.state.score} addScore={this.addScore} />
+              <OptionsPage
+                score={this.state.score}
+                addScore={this.addScore}
+                chooseOption={this.chooseOption}
+              />
             )}
           />
           <Route
             path="/results"
-            render={(props) => <ResultsPage score={this.state.score} />}
+            render={(props) => (
+              <ResultsPage
+                score={this.state.score}
+                option={this.state.option}
+              />
+            )}
           />
         </Switch>
       </Router>

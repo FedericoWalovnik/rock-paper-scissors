@@ -1,3 +1,28 @@
+@import '../../sass/mixins.scss';
+@import '../../sass/variables.scss';
+
 .results {
   height: min(100vh);
+
+  &__btn:link,
+  &__btn:active,
+  &__btn {
+    color: #fff;
+    font-size: 2rem;
+    text-decoration: none;
+    padding: 0.6rem 4rem;
+    border: 2px solid #fff;
+    border-radius: 3px;
+    transition: all 0.2s;
+    width: 10vw;
+    text-align: center;
+    margin-top: 4rem;
+    background-color: transparent;
+  }
+
+  &__btn:hover {
+    color: $background-color;
+    background-color: #fff;
+    border: none;
+  }
 }

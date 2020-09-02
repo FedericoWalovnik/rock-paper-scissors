@@ -17,8 +17,12 @@ class App extends React.Component {
     };
   }
 
-  addScore = () => {
-    this.setState({ score: this.state.score + 1 });
+  editScore = (result) => {
+    if (result === 'win') {
+      this.setState({ score: this.state.score + 1 });
+    } else {
+      this.setState({ score: this.state.score - 1 });
+    }
   };
 
   chooseOption = (optionChosen) => {
@@ -35,7 +39,6 @@ class App extends React.Component {
             render={(props) => (
               <OptionsPage
                 score={this.state.score}
-                addScore={this.addScore}
                 chooseOption={this.chooseOption}
               />
             )}
@@ -46,6 +49,7 @@ class App extends React.Component {
               <ResultsPage
                 score={this.state.score}
                 option={this.state.option}
+                editScore={this.editScore}
               />
             )}
           />

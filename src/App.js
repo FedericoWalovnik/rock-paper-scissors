@@ -13,20 +13,26 @@ class App extends React.Component {
 
     this.state = {
       score: 0,
-      option: ''
+      options: ['rock', 'paper', 'scissors'],
+      playerOption: '',
+      computerOption: ''
     };
   }
 
   editScore = (result) => {
     if (result === 'win') {
       this.setState({ score: this.state.score + 1 });
-    } else {
+    } else if (result === 'loose') {
       this.setState({ score: this.state.score - 1 });
     }
   };
 
-  chooseOption = (optionChosen) => {
-    this.setState({ option: optionChosen });
+  chooseOptionPlayer = (optionChosen) => {
+    this.setState({ playerOption: optionChosen });
+  };
+
+  optionComputer = (option) => {
+    this.setState({ computerOption: option });
   };
 
   render() {
@@ -39,7 +45,8 @@ class App extends React.Component {
             render={(props) => (
               <OptionsPage
                 score={this.state.score}
-                chooseOption={this.chooseOption}
+                options={this.state.options}
+                chooseOption={this.chooseOptionPlayer}
               />
             )}
           />
@@ -48,8 +55,11 @@ class App extends React.Component {
             render={(props) => (
               <ResultsPage
                 score={this.state.score}
-                option={this.state.option}
+                options={this.state.options}
+                playerOption={this.state.playerOption}
+                computerOption={this.state.computerOption}
                 editScore={this.editScore}
+                optionComputer={this.optionComputer}
               />
             )}
           />

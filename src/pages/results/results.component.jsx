@@ -8,21 +8,24 @@ import './results.styles.scss';
 
 class Results extends React.Component {
   computerPlay = () => {
-    const options = ['rock', 'paper', 'scissors'];
     const randomOption = Math.floor(Math.random() * Math.floor(3));
-    return options[randomOption];
+    this.props.optionComputer(randomOption);
   };
 
+  componentWillMount() {
+    this.computerPlay();
+  }
+
   componentDidMount() {
-    this.props.editScore('win');
+    this.props.editScore('loose');
   }
 
   render() {
     return (
       <div className="results">
         <Header score={this.props.score} />
-        <Option option={this.props.option} />
-        <Option option={this.computerPlay()} />
+        <Option option={this.props.options[this.props.playerOption]} />
+        <Option option={this.props.options[this.props.computerOption]} />
         <Link to={'/choose'}>
           <button className="results__btn">Play Again</button>
         </Link>

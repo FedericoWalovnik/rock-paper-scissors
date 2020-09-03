@@ -22,9 +22,39 @@ class App extends React.Component {
   editScore = (result) => {
     if (result === 'win') {
       this.setState({ score: this.state.score + 1 });
-    } else if (result === 'loose') {
+    } else if (result === 'lose') {
       this.setState({ score: this.state.score - 1 });
     }
+  };
+
+  whoWon = () => {
+    let result;
+    const computer = this.state.computerOption;
+    const player = this.state.playerOption;
+
+    if (computer === player) {
+      result = 'draw';
+    } else if (player === 0) {
+      if (computer === 2) {
+        result = 'win';
+      } else {
+        result = 'lose';
+      }
+    } else if (player === 1) {
+      if (computer === 0) {
+        result = 'win';
+      } else {
+        result = 'lose';
+      }
+    } else if (player === 2) {
+      if (computer === 1) {
+        result = 'win';
+      } else {
+        result = 'lose';
+      }
+    }
+
+    return result;
   };
 
   chooseOptionPlayer = (optionChosen) => {
@@ -32,7 +62,12 @@ class App extends React.Component {
   };
 
   optionComputer = (option) => {
-    this.setState({ computerOption: option });
+    this.setState({ computerOption: option }, () => {
+      this.editScore(this.whoWon());
+      console.log(`player: ${this.state.playerOption}`);
+      console.log(`computer: ${this.state.computerOption}`);
+      console.log(this.whoWon());
+    });
   };
 
   render() {

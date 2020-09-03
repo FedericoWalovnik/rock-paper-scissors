@@ -8,17 +8,45 @@ import './results.styles.scss';
 
 class Results extends React.Component {
   computerPlay = () => {
-    const randomOption = Math.floor(Math.random() * Math.floor(3));
-    this.props.optionComputer(randomOption);
+    this.props.optionComputer(Math.floor(Math.random() * Math.floor(2)));
   };
 
-  componentWillMount() {
-    this.computerPlay();
+  /*whoWon = () => {
+    let result;
+
+    if (this.props.computerOption === this.props.playerOption) {
+      result = 'draw';
+    } else if (this.props.playerOption === 0) {
+      if (this.props.computerOption === 2) {
+        result = 'win';
+      } else {
+        result = 'lose';
+      }
+    } else if (this.props.playerOption === 1) {
+      if (this.props.computerOption === 0) {
+        result = 'win';
+      } else {
+        result = 'lose';
+      }
+    } else if (this.props.playerOption === 2) {
+      if (this.props.computerOption === 1) {
+        result = 'win';
+      } else {
+        result = 'lose';
+      }
+    }
+
+    return result;
+  };*/
+
+  didPlayerLose = () => {};
+
+  UNSAFE_componentWillMount() {
+    //this.computerPlay();
+    this.props.optionComputer(Math.floor(Math.random() * Math.floor(3)));
   }
 
-  componentDidMount() {
-    this.props.editScore('loose');
-  }
+  componentDidMount() {}
 
   render() {
     return (

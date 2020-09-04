@@ -1,8 +1,16 @@
 @import '../../sass/mixins.scss';
 @import '../../sass/variables.scss';
 
-.results {
+.results-container {
   height: min(100vh);
+
+  &__results {
+    margin-top: 8rem;
+    display: grid;
+    grid-template-columns: repeat(3, 25vw);
+    justify-content: center;
+    justify-items: center;
+  }
 
   &__btn:link,
   &__btn:active,
@@ -23,6 +31,18 @@
   &__btn:hover {
     color: $background-color;
     background-color: #fff;
-    border: none;
+  }
+
+  &__playagain {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__text-result {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 5rem;
   }
 }

@@ -11,34 +11,6 @@ class Results extends React.Component {
     this.props.optionComputer(Math.floor(Math.random() * Math.floor(2)));
   };
 
-  /*whoWon = () => {
-    let result;
-
-    if (this.props.computerOption === this.props.playerOption) {
-      result = 'draw';
-    } else if (this.props.playerOption === 0) {
-      if (this.props.computerOption === 2) {
-        result = 'win';
-      } else {
-        result = 'lose';
-      }
-    } else if (this.props.playerOption === 1) {
-      if (this.props.computerOption === 0) {
-        result = 'win';
-      } else {
-        result = 'lose';
-      }
-    } else if (this.props.playerOption === 2) {
-      if (this.props.computerOption === 1) {
-        result = 'win';
-      } else {
-        result = 'lose';
-      }
-    }
-
-    return result;
-  };*/
-
   didPlayerLose = () => {};
 
   UNSAFE_componentWillMount() {
@@ -50,13 +22,18 @@ class Results extends React.Component {
 
   render() {
     return (
-      <div className="results">
+      <div className="results-container">
         <Header score={this.props.score} />
-        <Option option={this.props.options[this.props.playerOption]} />
-        <Option option={this.props.options[this.props.computerOption]} />
-        <Link to={'/choose'}>
-          <button className="results__btn">Play Again</button>
-        </Link>
+        <div className="results-container__results">
+          <Option option={this.props.options[this.props.playerOption]} />
+          <div className="results-container__playagain">
+            <h1 className="results-container__text-result">You {this.props.whoWon()}</h1>
+            <Link to={'/choose'}>
+              <button className="results-container__btn">Play Again</button>
+            </Link>
+          </div>
+          <Option option={this.props.options[this.props.computerOption]} />
+        </div>
       </div>
     );
   }

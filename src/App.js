@@ -23,7 +23,7 @@ class App extends React.Component {
     if (result === 'win') {
       console.log('toy en win');
       this.setState({ score: this.state.score + 1 });
-    } else if (result === 'lose' && this.score > 0) {
+    } else if (result === 'lose' && this.state.score > 0) {
       console.log('toy en lose');
       this.setState({ score: this.state.score - 1 });
     }
@@ -92,8 +92,8 @@ class App extends React.Component {
                 options={this.state.options}
                 playerOption={this.state.playerOption}
                 computerOption={this.state.computerOption}
-                editScore={this.editScore}
                 optionComputer={this.optionComputer}
+                whoWon={this.whoWon}
               />
             )}
           />

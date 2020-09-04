@@ -8,7 +8,7 @@ const Homepage = () => {
     <div className="homepage">
       <h1 className="homepage__welcome">Welcome to the game!</h1>
       <Link to="/choose" className="homepage__play-btn">
-        Play
+        Let´s Play
       </Link>
     </div>
   );

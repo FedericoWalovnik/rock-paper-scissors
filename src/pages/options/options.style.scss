@@ -1,0 +1,25 @@
+@import '../../sass/mixins.scss';
+@import '../../sass/variables.scss';
+
+.options-container {
+  height: min(100vh);
+  display: flex;
+  flex-direction: column;
+
+  &__options {
+    margin: 0 auto;
+    display: grid;
+    grid-template-rows: repeat(2, min-content);
+    grid-template-columns: repeat(2, min-content);
+
+    & a {
+      border-radius: 1000px;
+      margin: 2.5rem;
+    }
+  }
+
+  &__paper {
+    grid-column: 1 / -1;
+    justify-self: center;
+  }
+}

@@ -21,8 +21,10 @@ class App extends React.Component {
 
   editScore = (result) => {
     if (result === 'win') {
+      console.log('toy en win');
       this.setState({ score: this.state.score + 1 });
-    } else if (result === 'lose') {
+    } else if (result === 'lose' && this.score > 0) {
+      console.log('toy en lose');
       this.setState({ score: this.state.score - 1 });
     }
   };
@@ -64,9 +66,6 @@ class App extends React.Component {
   optionComputer = (option) => {
     this.setState({ computerOption: option }, () => {
       this.editScore(this.whoWon());
-      console.log(`player: ${this.state.playerOption}`);
-      console.log(`computer: ${this.state.computerOption}`);
-      console.log(this.whoWon());
     });
   };
 

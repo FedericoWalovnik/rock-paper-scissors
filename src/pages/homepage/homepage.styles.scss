@@ -16,10 +16,16 @@
     padding: 2rem 5rem;
     border: solid #fff 1px;
     border-radius: 1rem;
+
+    @include respond(phone) {
+      width: 80vw;
+      padding: 2rem 2rem;
+    }
   }
 
   &__logo {
     height: 6rem;
+    margin: auto 0;
   }
 
   &__credits {
@@ -38,6 +44,11 @@
     color: #fff;
     font-size: 7rem;
     margin-top: 8rem;
+
+    @include respond(phone) {
+      margin-top: 14rem;
+      font-size: 4rem;
+    }
   }
 
   &__play-btn:link,
@@ -53,6 +64,11 @@
     width: 10vw;
     text-align: center;
     margin-top: 6rem;
+
+    @include respond(phone) {
+      width: 20vw;
+      padding: 1rem 5rem;
+    }
   }
 
   &__play-btn:hover {

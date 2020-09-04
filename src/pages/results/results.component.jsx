@@ -25,14 +25,22 @@ class Results extends React.Component {
       <div className="results-container">
         <Header score={this.props.score} />
         <div className="results-container__results">
-          <Option option={this.props.options[this.props.playerOption]} />
+          <div>
+            <h2 className="results-container__picked">YOU PICKED</h2>
+            <Option option={this.props.options[this.props.playerOption]} />
+          </div>
           <div className="results-container__playagain">
-            <h1 className="results-container__text-result">You {this.props.whoWon()}</h1>
+            <h1 className="results-container__text-result">
+              You {this.props.whoWon()}
+            </h1>
             <Link to={'/choose'}>
               <button className="results-container__btn">Play Again</button>
             </Link>
           </div>
-          <Option option={this.props.options[this.props.computerOption]} />
+          <div className="results-container__computer">
+            <h2 className="results-container__picked">THE HOUSE PICKED</h2>
+            <Option option={this.props.options[this.props.computerOption]} />
+          </div>
         </div>
       </div>
     );

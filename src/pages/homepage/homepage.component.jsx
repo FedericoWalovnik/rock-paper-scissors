@@ -25,6 +25,8 @@ const Homepage = () => {
       <a
         className="viewcode"
         href="https://github.com/FedericoWalovnik/rock-paper-scissors"
+        target="_blank"
+        rel="noopener noreferrer"
       >
         <i class="fab fa-github"></i>View Code
       </a>

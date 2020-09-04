@@ -7,7 +7,7 @@
   flex-direction: column;
 
   &__options {
-    margin: 0 auto;
+    margin: auto;
     display: grid;
     grid-template-rows: repeat(2, min-content);
     grid-template-columns: repeat(2, min-content);

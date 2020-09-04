@@ -5,11 +5,24 @@
   height: min(100vh);
 
   &__results {
-    margin-top: 8rem;
+    margin-top: 20%;
     display: grid;
     grid-template-columns: repeat(3, 25vw);
     justify-content: center;
     justify-items: center;
+
+    @include respond(phone) {
+      grid-template-columns: repeat(2, 45vw);
+      grid-row: repeat(2, 100%);
+      row-gap: 6rem;
+    }
+  }
+
+  &__picked {
+    color: #fff;
+    letter-spacing: 1px;
+    padding-bottom: 3rem;
+    text-align: center;
   }
 
   &__btn:link,
@@ -26,6 +39,11 @@
     text-align: center;
     margin-top: 4rem;
     background-color: transparent;
+
+    @include respond(phone) {
+      width: 20vw;
+      padding: 1rem 5rem;
+    }
   }
 
   &__btn:hover {
@@ -33,11 +51,22 @@
     background-color: #fff;
   }
 
+  &__computer {
+    @include respond(phone) {
+      grid-row: 1 / 1;
+      grid-column: 2 / -1;
+    }
+  }
+
   &__playagain {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    @include respond(phone) {
+      grid-column: 1 / -1;
+    }
   }
 
   &__text-result {

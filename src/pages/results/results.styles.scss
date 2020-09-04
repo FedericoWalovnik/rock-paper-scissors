@@ -5,13 +5,14 @@
   height: min(100vh);
 
   &__results {
-    margin-top: 20%;
+    margin-top: 8%;
     display: grid;
     grid-template-columns: repeat(3, 25vw);
     justify-content: center;
     justify-items: center;
 
     @include respond(phone) {
+      margin-top: 20%;
       grid-template-columns: repeat(2, 45vw);
       grid-row: repeat(2, 100%);
       row-gap: 6rem;

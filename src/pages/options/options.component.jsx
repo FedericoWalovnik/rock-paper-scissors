@@ -11,27 +11,16 @@ const OptionsPage = ({ score, options, chooseOption }) => {
     <div className="options-container">
       <Header score={score} />
       <div className="options-container__options">
-        <Link
-          className={`options-container__${options[0]}`}
-          to="/results"
-          onClick={() => chooseOption(0)}
-        >
-          <Option option={options[0]} />
-        </Link>
-        <Link
-          className={`options-container__${options[2]}`}
-          to="/results"
-          onClick={() => chooseOption(2)}
-        >
-          <Option option={options[2]} />
-        </Link>
-        <Link
-          className={`options-container__${options[1]}`}
-          to="/results"
-          onClick={() => chooseOption(1)}
-        >
-          <Option option={options[1]} />
-        </Link>
+        {options.map((option, index) => (
+          <Link
+            key={index}
+            className={`options-container__${option}`}
+            to="/results"
+            onClick={() => chooseOption(index)}
+          >
+            <Option option={option} />
+          </Link>
+        ))}
       </div>
     </div>
   );
